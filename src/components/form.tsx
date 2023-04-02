@@ -34,6 +34,14 @@ const form = () => {
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
+    const url = 'https://scotts197.sg-host.com/test.php';
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'hello',
+    }).then(async (res) => {
+      console.log(await res.text());
+    });
     console.log(data);
   };
 
@@ -45,12 +53,9 @@ const form = () => {
       <form
         name="registration form"
         className="w-full"
-        method="POST"
-        action="/"
         data-netlify="true"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <input type="hidden" name="form-name" value="registration form" />
         <p className="text-2xl font-bold mb-10">Tell us about your camper(s)</p>
 
         <div className="flex px-2 flex-col md:grid gap-6 mb-6 grid-cols-1 md:grid-cols-6 w-full">
