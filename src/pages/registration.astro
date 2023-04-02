@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+import Progress from '../components/progress.astro';
+import Form from '../components/form';
+import Footer from '../components/footer.astro';
+---
+
+<Layout>
+  <div class="mx-auto max-w-2xl flex flex-col items-center h-screen mt-20">
+    <Progress step={1} />
+    <Form client:load />
+
+    <Footer />
+  </div>
+</Layout>

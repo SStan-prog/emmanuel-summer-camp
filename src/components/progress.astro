@@ -1,0 +1,62 @@
+---
+const { step } = Astro.props;
+---
+
+<div class="relative flex w-full justify-between max-w-2xl">
+  <div
+    class={`${
+      step >= 1
+        ? 'bg-blue-300 text-white border-blue-300'
+        : 'bg-blue-200 text-blue-300 border-blue-300'
+    } relative z-10 rounded-full border-4 flex justify-center items-center h-12 w-12 font-bold   text-2xl`}
+  >
+    1
+  </div>
+  <div
+    class={`${
+      step >= 2
+        ? 'bg-blue-300 text-white border-blue-300'
+        : 'bg-blue-200 text-blue-300 border-blue-300'
+    } relative z-10 rounded-full border-4 flex justify-center items-center  h-12 w-12 font-bold   text-2xl`}
+  >
+    2
+  </div>
+  <div
+    class={`${
+      step >= 3
+        ? 'bg-blue-300 text-white border-blue-300'
+        : 'bg-blue-200 text-blue-300 border-blue-300'
+    } relative z-10 rounded-full border-4 flex justify-center items-center  h-12 w-12 font-bold   text-2xl`}
+  >
+    3
+  </div>
+  <div
+    class={`${
+      step >= 4
+        ? 'bg-blue-300 text-white border-blue-300'
+        : 'bg-blue-200 text-blue-300 border-blue-300'
+    } relative z-10 rounded-full border-4 flex justify-center items-center  h-12 w-12 font-bold   text-2xl`}
+  >
+    4
+  </div>
+  <div class="absolute top-1/2 -translate-y-1/2 flex w-full">
+    <div
+      class={`${
+        step >= 2 ? 'bg-blue-300' : 'bg-blue-200'
+      } h-1 w-full transparent`}
+    >
+    </div>
+    <div
+      class={`${
+        step >= 3 ? 'bg-blue-300' : 'bg-blue-200'
+      } h-1 w-full transparent`}
+    >
+    </div>
+    <div
+      class={`${
+        step >= 4 ? 'bg-blue-300' : 'bg-blue-200'
+      } h-1 w-full transparent`}
+    >
+    </div>
+  </div>
+</div>

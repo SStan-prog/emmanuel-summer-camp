@@ -1,15 +1,85 @@
 ---
+import Layout from '../layouts/BaseLayout.astro';
+import { Picture } from '@astrojs/image/components';
+import Footer from '../components/footer.astro';
+
+import mainImage from '../../public/main.jpg';
+import waves from '../../public/waves.svg';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <div class="grid grid-col-1 xl:grid-cols-2 h-full">
+    <div class="bg-blue-600 w-full h-full min-h-screen">
+      <div
+        class="aspect-square sm:aspect-4/3 bg-cover w-full bg-center"
+        style={`background-image: url(${mainImage.src})`}
+      >
+      </div>
+      <div class="relative z-10">
+        <div
+          class="relative flex justify-center w-full z-10 xl:pt-10 -top-40 text-white text-center p-5 mx-auto bg-cover bg-top"
+          style={`background-image: url(${waves.src})`}
+        >
+          <div class="md:pb-20 pt-32 max-w-2xl">
+            <h1 class="text-2xl sm:text-4xl font-bold mb-5">
+              Come aboard the SS Emmanuel!
+            </h1>
+            <p class="text-base sm:text-xl">
+              Spend 4 days adventuring with us! Stories, games, music, crafts &
+              STEM activities abound as we cruise the seas together.<br /><br />
+              Come along with adult and youth leaders. We’ll explore the world of
+              Paul and the Early Church as we cruise through The Mediterranean Sea.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col w-full justify-center items-center px-5 mt-20 xl:mt-40"
+    >
+      <h2 class="font-bold text-5xl mb-14 sm:mb-10">Camp Details</h2>
+      <div
+        class="flex flex-col gap-10 sm:flex-row justify-between w-full mb-10 max-w-3xl"
+      >
+        <div class="flex flex-col items-center">
+          <img src="/calendar.svg" alt="calendar" />
+          <p class="font-bold">July 4 - 7, 2023</p>
+          <p>9:30 am to 3:30 pm</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="/kids.svg" alt="kids" />
+          <p class="font-bold">
+            $160 <span class="text-xs font-normal">per camper</span>
+          </p>
+          <p>Ages 4-12</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <img src="/slide.svg" alt="slide" />
+          <p class="font-bold">Extra care</p>
+          <div class="mb-5">
+            <p>Pre camp care: 8:30 am</p>
+            <p>
+              $25 <span class="font-normal text-xs"
+                >per camper for <strong>4 days</strong></span
+              >
+            </p>
+          </div>
+          <div class="mb-5">
+            <p>Post camp care: until 4:30pm</p>
+            <p>
+              $25 <span class="font-normal text-xs"
+                >per camper for <strong>4 days</strong></span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <a
+        href="/registration"
+        class="bg-blue-300 hover:bg-blue-500 text-white font-bold text-2xl rounded-lg px-8 py-3 transition-all"
+        >Start Registration</a
+      >
+      <Footer />
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,50 @@
+---
+import '@fontsource/inter';
+import '@fontsource/inter/700.css';
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Camp Emmanuel Registration</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <slot />
+    <style lang="scss" is:global>
+      :root {
+        /* FONTS */
+        --font-heading: 'Kalam', cursive;
+        --font-body: 'Ubuntu', sans-serif;
+      }
+
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        margin: 0 auto;
+        height: 100%;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #e7f0fe;
+        color: #374e76;
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+      }
+    </style>
+  </body>
+</html>
