@@ -42,7 +42,15 @@ const form = () => {
 
   return (
     <>
-      <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        name="registration form"
+        className="w-full"
+        method="POST"
+        action="/"
+        data-netlify="true"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <input type="hidden" name="form-name" value="registration form" />
         <p className="text-2xl font-bold mb-10">Tell us about your camper(s)</p>
 
         <div className="flex px-2 flex-col md:grid gap-6 mb-6 grid-cols-1 md:grid-cols-6 w-full">
